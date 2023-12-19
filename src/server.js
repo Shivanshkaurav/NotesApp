@@ -8,10 +8,11 @@ app.use(bodyParser.json());
 
 const mongoose = require('mongoose');
 const mongoDbPath = "mongodb+srv://Shivansh04:Shivansh04@cluster0.fburzrl.mongodb.net/?retryWrites=true&w=majority";
+
 mongoose.connect(mongoDbPath).then(function(){
 
     app.get("/", function(req, res){
-        const response = {message: "API Works!"};
+        const response = { statuscode: res.statusCode, message: "API Works!"};
         res.json(response);
     });
     
